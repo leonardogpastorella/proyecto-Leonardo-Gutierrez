@@ -158,7 +158,13 @@ main {
     margin: 2rem;
     padding: 2rem;
 }
-
+/*eliminar padding y margin del main en vista movil*/
+@media (max-width: 600px) {
+    main {
+        margin: 0;
+        padding: 0;
+    }
+}
 section {
     margin: 2rem;
     padding: 2rem;
