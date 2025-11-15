@@ -340,6 +340,7 @@ footer {
 }
 
 .redes-sociales {
+    margin-top: 1rem;
     text-align: right;
 }
 
@@ -348,7 +349,10 @@ footer {
     color: black;
     font-size: 20px;
 }
-
+footer a {
+    text-decoration: none; 
+    border: none;          
+}
 footer p {
     text-align: left;
     font-family: "Nunito Sans", sans-serif;
@@ -361,12 +365,18 @@ footer a:hover {
 }
 @media (max-width: 600px) {
     footer {
+        flex-direction: column;
         text-align: center;
     }
 
     .redes-sociales {
         text-align: center;
         margin-top: 1rem;
+    }
+}
+@media (max-width: 600px) {
+    .redes-sociales a img {
+        width: 25px;
     }
 }
 /*estilos responsivos*/
