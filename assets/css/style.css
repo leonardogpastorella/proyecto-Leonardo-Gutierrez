@@ -1,0 +1,386 @@
+/*css reset*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+.row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 1.5rem;
+}
+
+/* body */
+body {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+    min-height: 100vh; 
+}
+header {
+    grid-area: header;
+}
+main {
+    grid-area: main;
+}
+footer {
+    grid-area: footer;
+}
+body {
+    background-color: darkgray;
+}
+
+/*icono*/
+/* HAMBURGUESA  */
+
+.hamburguesa {
+    color: black;
+    font-size: 30px;
+    display: none;
+    cursor: pointer;
+}
+
+@media (max-width: 991px) {
+    .hamburguesa {
+        display: block;
+    }
+
+    .mi-header .nav-menu {
+        display: none;
+    }
+}
+@media (max-width: 991px) {
+.nav-menu ul {
+    flex-direction: column;
+    background-color: rgb(219,216,200);
+    padding: 20px;
+    position: absolute;
+    top: 80px;
+    right: 0;
+    width: 70%;
+}
+}
+a li {
+    font-family: "Nunito Sans", sans-serif;
+    color: black;
+    text-decoration: none;
+}
+
+/*estilos del menu de navegacion*/
+
+.mi-header {
+    background-color: rgb(219, 216, 200);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Logo */
+.mi-header .logo-header img {
+    width: 300px;
+}
+
+@media (max-width: 600px) {
+    .mi-header .logo-header img {
+        width: 180px;
+    }
+}
+
+/* nav menú */
+.mi-header .nav-menu ul {
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.mi-header .nav-menu li {
+    position: relative;
+}
+
+/* Links del menú */
+.mi-header .nav-menu a {
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: black;
+}
+
+.mi-header .nav-menu a:hover {
+    color: rgb(74, 116, 91);
+}
+
+/* sub menu */
+
+.mi-header .nav-menu li.submenu ul {
+    display: none;
+    position: absolute;
+    background-color: rgb(219, 216, 200);
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    top: 100%;
+    left: 0;
+    min-width: 150px;
+    padding: 0;
+    z-index: 2000;
+}
+
+.mi-header .nav-menu li.submenu ul li {
+    padding: 10px;
+}
+
+.mi-header .nav-menu li.submenu ul li a {
+    display: block;
+    padding: 10px 15px;
+}
+
+.mi-header .nav-menu li.submenu:hover ul {
+    display: block;
+}
+
+.nav-menu.active { display: block; }
+
+/*estilos del main*/
+main {
+
+    min-height: 70vh;
+    margin: 2rem;
+    padding: 2rem;
+}
+
+section {
+    margin: 2rem;
+    padding: 2rem;
+    text-align: justify;
+    font-family: "Nunito Sans", sans-serif;
+    color: black;
+
+}
+
+.section {
+    background-color: rgb(219, 216, 200);
+    border: #768d80 2px solid;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+
+}
+/*responsivo main y secciones */
+@media (max-width: 600px) {
+    section {
+        margin: 1rem;
+        padding: 1rem;
+    }
+}
+
+main.container {
+    width: min(1200px, 90%);
+    margin: 0 auto;
+}
+
+/*estilos del encabezado de las paginas*/
+.encabezado {
+    font-family: "Nunito Sans", sans-serif;
+    color: rgb(12, 63, 55);
+    margin-bottom: 2rem;
+}
+.main-container .section p:last-of-type {
+    font-weight: bold;
+    color: rgb(49, 51, 77);
+}
+
+/* grilla index */
+section .muebles-grilla img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: rgb(12, 63, 55) 2px solid;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+section .muebles-grilla img {
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    border: rgb(12, 63, 55) 2px solid;
+    border-radius: 8px;
+}
+section .muebles-grilla img:hover {
+    transform: scale(1.10);           
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+    cursor: pointer;
+}
+section .muebles-grilla {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 30px;
+}
+
+@media (min-width: 992px) {
+    section .muebles-grilla img {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+}
+/*----estilo paginas----*/
+
+
+/*estilo del formulario de contacto*/
+.contacto {
+    background-color: rgb(219, 216, 200);
+    text-align: center;
+    font-family: "Nunito Sans", sans-serif;
+    color: black;
+    padding: 2rem;
+    border: rgb(12, 63, 55) 2px solid;
+    
+}
+
+input:focus-visible {
+    outline: 3px solid rgb(12, 63, 55);
+    outline-offset: 2px;
+    border-color: rgb(12, 63, 55);
+}
+
+button:active {
+    background-color: rgb(12, 63, 55);
+    transform: scale(0.95);
+}
+
+/* responsivo formulario de contacto */
+
+@media (max-width: 768px) {
+    .contacto {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+.contacto {
+    max-width: 600px; /* evita que sea enorme en desktop */
+    margin: 0 auto;   /* lo centra */
+}
+/*seccion grilla pag. muebles */
+
+.muebles-fotos img {
+    border: rgb(12, 63, 55) 2px solid;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.muebles-fotos img {
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    border: rgb(12, 63, 55) 2px solid;
+    border-radius: 8px;
+}
+.muebles-fotos img:hover {
+    transform: scale(1.05);           
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+    cursor: pointer;
+}
+
+
+/*grilla pagina asientos*/
+.section-fotos .asientos img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: rgb(12, 63, 55) 2px solid;
+}
+
+.section-fotos .asientos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 30px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+.section-fotos .asientos img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: rgb(12, 63, 55) 2px solid;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+.section-fotos .asientos img {
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    border: rgb(12, 63, 55) 2px solid;
+    border-radius: 8px;
+}
+.section-fotos .asientos img:hover {
+    transform: scale(1.05);           
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+    cursor: pointer;
+}
+@media (min-width: 992px) {
+    .section-fotos .asientos img {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+}
+
+/*estilos del footer*/
+footer {
+    background-color: rgb(219, 216, 200);
+    display: flex;
+    padding: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Nunito Sans", sans-serif;
+    color: rgb(0, 0, 0);
+}
+
+.redes-sociales {
+    text-align: right;
+}
+
+.redes-sociales a {
+    margin-left: 10px;
+    color: black;
+    font-size: 20px;
+}
+
+footer p {
+    text-align: left;
+    font-family: "Nunito Sans", sans-serif;
+    color: black;
+}
+
+footer a:hover {
+    color: rgb(74, 116, 91);
+
+}
+@media (max-width: 600px) {
+    footer {
+        text-align: center;
+    }
+
+    .redes-sociales {
+        text-align: center;
+        margin-top: 1rem;
+    }
+}
+/*estilos responsivos*/
+@media (max-width: 768px) {
+    section .muebles-grilla {
+        grid-template-columns: 1fr;
+    }
+
+    section .fotos-muebles {
+        grid-template-columns: 1fr;
+    }
+
+    .section-fotos .asientos {
+        grid-template-columns: 1fr;
+    }
+}
+
