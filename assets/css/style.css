@@ -199,11 +199,17 @@ main.container {
     color: rgb(12, 63, 55);
     margin-bottom: 2rem;
 }
-.main-container .section p:last-of-type {
+.main-container .section p:last-of-type{
     font-weight: bold;
     color: rgb(49, 51, 77);
 }
-
+.main-container .section a {
+    text-decoration: none;
+    color: rgb(12, 63, 55);
+}
+.main-container .section a:hover {
+    text-decoration: underline;
+}
 /* grilla index */
 section .muebles-grilla img {
     width: 100%;
